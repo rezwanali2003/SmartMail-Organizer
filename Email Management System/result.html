@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Classification Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .result p {
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        .result .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .result .spam {
+            color: red;
+        }
+        .result .not-spam {
+            color: green;
+        }
+        .action-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .action-btn a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .action-btn a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Classification Result</h1>
+        <div class="result">
+            <p class="icon">{% if prediction == 'spam' %}<i class="fas fa-exclamation-circle spam"></i>{% else %}<i class="fas fa-check-circle not-spam"></i>{% endif %}</p>
+            <p>{% if prediction == 'spam' %}This email is likely spam.{% else %}This email is not spam.{% endif %}</p>
+        </div>
+        <div class="action-btn">
+            <a href="/" class="back-btn">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
